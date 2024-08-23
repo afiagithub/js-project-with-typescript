@@ -12,7 +12,7 @@ console.log('new typescript project');
 // }
 
 class User {
-    private token = 'hjta14adef'
+    protected token = 'hjta14adef' // protected property can be used in the same class & classes that inherit this class
     readonly city: string = 'dhaka' //you have to initialize it at some point otherwise error
     constructor(public email: string,
         public name: string,
@@ -31,11 +31,15 @@ class User {
     }
 }
 
+class SubUser extends User{
+    isRelated: boolean = true
+    changeToken(){
+        this.token = 'afiaafiaafia'
+    }
+}
+
 let afia = new User('afia@rahman.com', 'afia rahman', 549)
 console.log(afia.city);
 console.log(afia.getToken);
 console.log(afia.getToken = 'afia@rahman.com');
 console.log(afia.getToken);
-
-
-
