@@ -15,8 +15,21 @@ class User {
         this.email = email;
         this.name = name;
         this.userId = userId;
+        this.token = 'hjta14adef';
         this.city = 'dhaka'; //you have to initialize it at some point otherwise error
+    }
+    get getToken() {
+        return this.token;
+    }
+    set getToken(user_email) {
+        if (this.email !== user_email) {
+            throw new Error('Forbidden Access');
+        }
+        this.token = '74256kkkkiii';
     }
 }
 let afia = new User('afia@rahman.com', 'afia rahman', 549);
 console.log(afia.city);
+console.log(afia.getToken);
+console.log(afia.getToken = 'afia@rahman.com');
+console.log(afia.getToken);
